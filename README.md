@@ -76,6 +76,39 @@ Connection: keep-alive
 {"user":null,"login":null,"ok":true}
 ```
 
+### API protected
+
+#### With authentcation cookie
+
+```
+curl -i -b 'seneca-login=Fe26.2**599663fa9a8a5234937de49f4e06772fe685b1b0e8c3f367ae4946d963796ab9*LNOB3LreoPolrqN9FnSbNA*kGf4931n2wXbaya19nEzmuFoLJIows35RmTeAPfK8xUent-c3l6pD7g0B5QDmE067TG9B53p0jEdOvYsovP6aA**fe671ac75cdc47de2412421730a60aa2e5a8dbf18693ed1791ca7b41065809d4*Fdv8-uBSf22K7z7XSQV24WN-6Z6mroeNAY7Tdf-eqnA' http://localhost:3000/api/service
+
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 92
+accept-ranges: bytes
+Date: Wed, 16 Mar 2016 10:31:50 GMT
+Connection: keep-alive
+
+{"ok":true,"message":"Protected service. This server is accessed now by admin@concorda.com"}
+```
+
+#### Without authentcation cookie
+
+```
+curl -i http://localhost:3000/api/service
+
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: cookie
+content-type: application/json; charset=utf-8
+cache-control: no-cache
+content-length: 76
+Date: Wed, 16 Mar 2016 10:34:02 GMT
+Connection: keep-alive
+
+{"statusCode":401,"error":"Unauthorized","message":"Missing authentication"}
+```
 
 ## Contributing
 The [Concorda][] encourages open participation. If you feel you can help in any way, be it with
