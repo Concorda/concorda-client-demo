@@ -11,10 +11,11 @@ module.exports = function (server, options, next) {
   seneca
     .use(ConcordaClient, {
         mesh: {
-          active: process.env.USE_MESH || true
+          active: process.env.USE_MESH || false,
+          auto: true
         },
         transport: {
-          active: process.env.USE_TRANSPORT || true,
+          active: process.env.USE_TRANSPORT || false,
           type: process.env.TRANSPORT_TYPE || 'tcp'
         },
         auth: {
