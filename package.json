@@ -1,0 +1,29 @@
+{
+  "name": "concorda-client-demo",
+  "version": "0.0.1",
+  "description": "A simple HAPI server that expose a REST API protected by Concorda user management service",
+  "author": "Mircea Alexandru (http://alexandrumircea.ro)",
+  "main": "./start.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nearform/concorda-client-demo.git"
+  },
+  "scripts": {
+    "start": "node ./start.js"
+  },
+  "dependencies": {
+    "async": "1.5.x",
+    "bell": "6.1.0",
+    "chairo": "2.x.x",
+    "concorda-client": "0.0.x",
+    "hapi": "12.x.x",
+    "hapi-auth-cookie": "5.0.0",
+    "lodash": "4.5.1",
+    "seneca-balance-client": "0.2.0",
+    "seneca-mesh": "0.5.0"
+  },
+  "devDependencies": {
+    "lab": "8.0.x"
+  }
+}
