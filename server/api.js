@@ -9,8 +9,20 @@ module.exports = function (server, options, next) {
   var seneca = server.seneca
 
   seneca
-    .use(ConcordaClient, {restrict: '/api'})
-
+    .use(ConcordaClient, {
+        mesh: {
+          active: process.env.USE_MESH || true
+        },
+        transport: {
+          active: process.env.USE_TRANSPORT || true,
+          type: process.env.TRANSPORT_TYPE || 'tcp'
+        },
+        auth: {
+          restrict: '/api',
+          password: process.env.COOKIE_PASSWORD || '12323433234ffdfrdssadfhsamqwr098yrd09r8mhmf9q84mfxkwedorgno438drn8473nd,mnjbrk'
+        }
+      }
+    )
 
   function demoService (msg, response) {
 

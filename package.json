@@ -17,7 +17,7 @@
     "bell": "6.1.0",
     "chairo": "2.x.x",
     "concorda-client": "0.0.x",
-    "hapi": "12.x.x",
+    "hapi": "13.x.x",
     "hapi-auth-cookie": "5.0.0",
     "lodash": "4.5.1",
     "seneca-balance-client": "0.2.0",
