@@ -5,14 +5,18 @@ var Bell = require('bell')
 var Chairo = require('chairo')
 var Cookie = require('hapi-auth-cookie')
 var API = require('./server/api')
+var DotEnv = require('dotenv')
+
+// load env config file
+DotEnv.config({path: './config/production.env'})
 
 // Options for our hapi plugins.
 var opts = {
   server: {
     port: process.env.PORT || 3000
   },
-  chairo: {
-    timeout: 2000,
+  seneca: {
+    timeout: 4000,
     secure: true,
     log: {level: 'INFO'}
   }
@@ -26,6 +30,7 @@ function endIfErr (err) {
   }
 }
 
+
 // Create our server.
 var server = new Hapi.Server({ debug: { request: ['error'] } })
 server.connection({port: opts.server.port})
@@ -34,7 +39,8 @@ server.connection({port: opts.server.port})
 var plugins = [
   {register: Bell},
   {register: Cookie},
-  {register: Chairo, options: opts.chairo},
+  {register: Chairo, options: {
+  }},
   {register: API}
 ]
 

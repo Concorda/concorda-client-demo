@@ -16,12 +16,13 @@
     "async": "1.5.x",
     "bell": "6.1.0",
     "chairo": "2.x.x",
-    "concorda-client": "0.0.x",
+    "concorda-client": "concorda/concorda-client#test",
+    "dotenv": "^2.0.0",
     "hapi": "13.x.x",
     "hapi-auth-cookie": "5.0.0",
     "lodash": "4.5.1",
-    "seneca-balance-client": "0.2.0",
-    "seneca-mesh": "0.5.0"
+    "seneca": "2.x.x",
+    "seneca-balance-client": "0.4.x"
   },
   "devDependencies": {
     "lab": "8.0.x"
