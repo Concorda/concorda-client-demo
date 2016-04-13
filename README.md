@@ -8,22 +8,37 @@ Concorda: A simple client demo exposing a REST API protected by Concorda user ma
 
 A detailed documentation can be found in [Concorda wiki](https://github.com/Concorda/docs/blob/master/Readme.md)
 
-## Starting demo client
+### Starting demo client that connects to a remote Concorda microservice
 
  * clone this repository
  * run
  
-```
+```sh
 npm install
+npm start
 ```
+
+More documentation about this type of deployment can be found [here](https://github.com/Concorda/docs/blob/master/doc/install-client.md)
  
-## Commands
+### Starting demo client using Concorda as internal plugin
+
+ * clone this repository
+ * run
+ 
+```sh
+npm install
+node start_plugin
+```
+
+More documentation about this type of deployment can be found [here](https://github.com/Concorda/docs/blob/master/doc/install-client.md)
+ 
+### Commands
 
 To demo properly all API exposed automatically by concorda client the curl tool is used. Please find bellow examples of using curl with Concorda plugin.
 
 For example of using Concorda with a React client implementation please take a look at this project - [Vidi Dashboard](https://github.com/vidi-insights/vidi-dashboard)
 
-### Login
+#### Login
 
 ```
 
@@ -41,7 +56,7 @@ Connection: keep-alive
 
 ```
 
-### User
+#### User
 
 ```
 
@@ -59,7 +74,7 @@ Connection: keep-alive
 
 ```
 
-### Logout
+#### Logout
 
 ```
 curl -i -b 'seneca-login=Fe26.2**599663fa9a8a5234937de49f4e06772fe685b1b0e8c3f367ae4946d963796ab9*LNOB3LreoPolrqN9FnSbNA*kGf4931n2wXbaya19nEzmuFoLJIows35RmTeAPfK8xUent-c3l6pD7g0B5QDmE067TG9B53p0jEdOvYsovP6aA**fe671ac75cdc47de2412421730a60aa2e5a8dbf18693ed1791ca7b41065809d4*Fdv8-uBSf22K7z7XSQV24WN-6Z6mroeNAY7Tdf-eqnA' http://localhost:3000/auth/logout
@@ -76,9 +91,9 @@ Connection: keep-alive
 {"user":null,"login":null,"ok":true}
 ```
 
-### API protected
+#### API protected
 
-#### With authentcation cookie
+##### With authentication cookie
 
 ```
 curl -i -b 'seneca-login=Fe26.2**599663fa9a8a5234937de49f4e06772fe685b1b0e8c3f367ae4946d963796ab9*LNOB3LreoPolrqN9FnSbNA*kGf4931n2wXbaya19nEzmuFoLJIows35RmTeAPfK8xUent-c3l6pD7g0B5QDmE067TG9B53p0jEdOvYsovP6aA**fe671ac75cdc47de2412421730a60aa2e5a8dbf18693ed1791ca7b41065809d4*Fdv8-uBSf22K7z7XSQV24WN-6Z6mroeNAY7Tdf-eqnA' http://localhost:3000/api/service
@@ -94,7 +109,7 @@ Connection: keep-alive
 {"ok":true,"message":"Protected service. This server is accessed now by admin@concorda.com"}
 ```
 
-#### Without authentcation cookie
+##### Without authentication cookie
 
 ```
 curl -i http://localhost:3000/api/service
