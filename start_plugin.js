@@ -47,16 +47,9 @@ server.register(plugins, function (err) {
   endIfErr(err)
 
 
-  server.seneca.use(Concorda,
-    {
-      mesh: {
-        active: process.env.USE_MESH || false,
-        auto: true
-      },
-      transport: {
-        active: process.env.USE_TRANSPORT || false,
-        type: process.env.TRANSPORT_TYPE || 'tcp'
-      },
+  server.seneca
+    .use(Concorda, {
+      appkey: 'concorda',
       auth: {
         restrict: '/api',
         password: process.env.COOKIE_PASSWORD || '12323433234ffdfrdssadfhsamqwr098yrd09r8mhmf9q84mfxkwedorgno438drn8473nd,mnjbrk'
